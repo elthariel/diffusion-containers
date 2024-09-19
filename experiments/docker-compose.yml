@@ -1,0 +1,24 @@
+#
+# A small docker compose file to demonstrate how to run the image
+# and use it during development
+#
+
+services:
+  experiments:
+    image: ghcr.io/flagcatstudio/experiments:latest
+    env_file:
+      - path: ./.env
+        required: false
+    environment: {}
+    volumes:
+      - ./workspace:/workspace
+    ports:
+      - 8001:8001
+      - 8010:8010
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
