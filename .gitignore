@@ -9,6 +9,8 @@
 \#*
 
 #
-# Image workspace
+# Local stuff
 #
 workspace
+.env
+docker-compose.override.yml
