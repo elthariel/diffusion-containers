@@ -45,6 +45,7 @@ ADD ./overlay/ /
 USER user
 RUN jupyter contrib nbextension install --user && \
     jupyter nbextension enable --py widgetsnbextension
+USER root
 
 EXPOSE 21
 EXPOSE 8001
@@ -53,5 +54,4 @@ ARG VERSION='unknown'
 ENV RUNPOD_BASE_VERSION=${VERSION}
 RUN echo "${RUNPOD_BASE_VERSION}" > /etc/runpod-base-version
 
-USER root
 CMD ["/bin/sleep", "infinity"]
