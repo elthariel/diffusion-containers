@@ -10,7 +10,9 @@ RUN apt-get update \
     \
     iproute2 openssh-server \
     \
-    nano mg lsof less file tree
+    nano mg lsof less file tree \
+    \
+    libgl1 libglib2.0-0
 
 
 RUN mkdir -p /tmp/dist \
@@ -47,5 +49,9 @@ RUN jupyter contrib nbextension install --user && \
 EXPOSE 21
 EXPOSE 8001
 
+ARG VERSION='unknown'
+ENV RUNPOD_BASE_VERSION=${VERSION}
+RUN echo "${RUNPOD_BASE_VERSION}" > /etc/runpod-base-version
+
 USER root
-CMD ["/bin/bash"]
+CMD ["/bin/sleep", "infinity"]

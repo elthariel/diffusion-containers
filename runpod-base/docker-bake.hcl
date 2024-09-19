@@ -35,7 +35,7 @@ target "latest" {
   tags = ["${REGISTRY}/${REGISTRY_USER}/runpod-base:latest"]
   args = {
     PYTORCH_TAG="${PYTORCH_TAG}"
-    VERSION = "${VERSION}"
+    VERSION = "${VERSION}-dev"
     CUDA_PATH = "${CUDA_PATH}"
   }
   platforms = ["linux/amd64"]

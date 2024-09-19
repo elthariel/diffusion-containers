@@ -1,11 +1,11 @@
-name: runpod-base
+name: experiments
 
 on:
   push:
     branches:
       - main
     tags:
-      - "runpod-base-*"
+      - "experiments-*"
 
 jobs:
   latest:
@@ -34,12 +34,12 @@ jobs:
         uses: docker/bake-action@v5
         with:
           targets: latest
-          workdir: ./runpod-base
+          workdir: ./experiments
           push: true
 
 
   release:
-    if: startsWith(github.ref_name, 'runpod-base-')
+    if: startsWith(github.ref_name, 'experiments-')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -63,5 +63,5 @@ jobs:
       - name: Build and push
         uses: docker/bake-action@v5
         with:
-          workdir: ./runpod-base
+          workdir: ./experiments
           push: true

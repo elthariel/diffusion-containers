@@ -24,7 +24,17 @@ target "default" {
   args = {
     BASE_IMAGE="${REGISTRY}/${REGISTRY_USER}/${BASE_IMAGE_NAME}:${BASE_IMAGE_TAG}"
     VERSION = "${VERSION}"
-    XFORMERS_VERSION = "0.0.19"
+  }
+  platforms = ["linux/amd64"]
+  annotations = ["org.opencontainers.image.authors=${REGISTRY_USER}"]
+}
+
+target "latest" {
+  dockerfile = "./Dockerfile"
+  tags = ["${REGISTRY}/${REGISTRY_USER}/experiments:latest"]
+  args = {
+    BASE_IMAGE="${REGISTRY}/${REGISTRY_USER}/${BASE_IMAGE_NAME}:latest"
+    VERSION = "${VERSION}-dev"
   }
   platforms = ["linux/amd64"]
   annotations = ["org.opencontainers.image.authors=${REGISTRY_USER}"]
