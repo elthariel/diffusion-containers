@@ -8,3 +8,10 @@ workspace_dist:
     controlnet: controlnets
     embeddings: embeddings
     hypernetworks: hypernetworks
+
+    # Impact Pack ADetailer
+    sams: sams
+    onnx: onnx
+    ultralytics: ultralytics
+    ultralytics_bbox: ultralytics/bbox
+    ultralytics_sgem: ultralytics/segm
