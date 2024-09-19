@@ -1,0 +1,14 @@
+#
+# .gitignore file for flagcat containers repo
+#
+
+#
+# Emacs
+#
+*~
+\#*
+
+#
+# Image workspace
+#
+workspace
