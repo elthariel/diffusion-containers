@@ -1,0 +1,5 @@
+:8010 {
+	import ../auth
+	encode zstd gzip
+	reverse_proxy http://localhost:42010
+}

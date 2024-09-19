@@ -1,0 +1,10 @@
+workspace_dist:
+    base_path: /workspace/dist
+
+    checkpoints: checkpoints
+    vae: vaes
+    loras: loras
+    upscale_models: upscalers
+    controlnet: controlnets
+    embeddings: embeddings
+    hypernetworks: hypernetworks

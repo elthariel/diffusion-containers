@@ -1,0 +1,9 @@
+#!/command/with-contenv sh
+
+exec s6-setuidgid user \
+     s6-envdir ./env \
+     /opt/conda/bin/jupyter lab \
+     --no-browser --ip localhost --port 42001 \
+     --notebook-dir=/workspace \
+     --NotebookApp.token='' --NotebookApp.password='' \
+     --ServerApp.allow_remote_access=True \

@@ -1,0 +1,11 @@
+#!/command/with-contenv sh
+
+. /opt/venv/comfyui/bin/activate
+
+exec s6-setuidgid user \
+     s6-envdir ./env \
+     python /workspace/apps/comfyui/main.py --listen localhost --port 42010 \
+     --input-directory /workspace/comfyui/inputs \
+     --output-directory /workspace/comfyui/outputs \
+     --multi-user \
+     --disable-auto-launch
