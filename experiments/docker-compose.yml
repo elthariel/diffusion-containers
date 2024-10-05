@@ -12,9 +12,11 @@ services:
     environment: {}
     volumes:
       - ./workspace:/workspace
-    ports:
-      - 8001:8001
-      - 8010:8010
+    # # Uncomment those lines, or better, add this configuration in
+    # # docker-compose.override.yml
+    # ports:
+    #   - 8001:8001
+    #   - 8010:8010
     restart: unless-stopped
     deploy:
       resources:
