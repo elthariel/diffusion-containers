@@ -3,7 +3,7 @@ variable "REGISTRY" {
 }
 
 variable "REGISTRY_USER" {
-    default = "flagcatstudio"
+    default = "elthariel"
 }
 
 variable "PYTORCH_TAG" {
