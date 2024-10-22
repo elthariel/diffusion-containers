@@ -2,12 +2,14 @@ workspace_dist:
     base_path: /workspace/dist
 
     checkpoints: checkpoints
+    diffusion_models: unets
     vae: vaes
     loras: loras
     upscale_models: upscalers
     controlnet: controlnets
     embeddings: embeddings
     hypernetworks: hypernetworks
+    clip: clip
 
     # Impact Pack ADetailer
     sams: sams
@@ -15,3 +17,7 @@ workspace_dist:
     ultralytics: ultralytics
     ultralytics_bbox: ultralytics/bbox
     ultralytics_sgem: ultralytics/segm
+
+    # Flux stuff
+    xlabs_controlnets: flux/controlnets
+    xlabs_loras: flux/loras
