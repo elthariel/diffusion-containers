@@ -7,5 +7,4 @@ exec s6-setuidgid user \
      python /workspace/apps/comfyui/main.py --listen localhost --port 42010 \
      --output-directory /workspace/outputs/comfyui \
      --multi-user \
-     --highvram \
      --disable-auto-launch
