@@ -18,6 +18,10 @@ variable "VERSION" {
   default = "0.0.1"
 }
 
+variable "COMFY_VERSION" {
+  default = "0.3.5"
+}
+
 target "default" {
   dockerfile = "./Dockerfile"
   tags = ["${REGISTRY}/${REGISTRY_USER}/experiments:${VERSION}"]
@@ -35,6 +39,7 @@ target "latest" {
   args = {
     BASE_IMAGE="${REGISTRY}/${REGISTRY_USER}/${BASE_IMAGE_NAME}:latest"
     VERSION = "${VERSION}-dev"
+    COMFY_VERSION=COMFY_VERSION
   }
   platforms = ["linux/amd64"]
   annotations = ["org.opencontainers.image.authors=${REGISTRY_USER}"]
