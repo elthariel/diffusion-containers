@@ -18,6 +18,10 @@ variable "VERSION" {
   default = "0.0.1"
 }
 
+variable "CONTAINER_UID" {
+  default = "1001"
+}
+
 target "default" {
   dockerfile = "./Dockerfile"
   tags = ["${REGISTRY}/${REGISTRY_USER}/runpod-base:${VERSION}-${PYTORCH_TAG}"]
@@ -25,6 +29,7 @@ target "default" {
     PYTORCH_TAG="${PYTORCH_TAG}"
     VERSION = "${VERSION}"
     CUDA_PATH = "${CUDA_PATH}"
+    CONTAINER_UID = "${CONTAINER_UID}"
   }
   platforms = ["linux/amd64"]
   annotations = ["org.opencontainers.image.authors=${REGISTRY_USER}"]
@@ -37,6 +42,7 @@ target "latest" {
     PYTORCH_TAG="${PYTORCH_TAG}"
     VERSION = "${VERSION}-dev"
     CUDA_PATH = "${CUDA_PATH}"
+    CONTAINER_UID = "${CONTAINER_UID}"
   }
   platforms = ["linux/amd64"]
   annotations = ["org.opencontainers.image.authors=${REGISTRY_USER}"]

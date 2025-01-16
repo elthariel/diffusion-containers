@@ -1,0 +1,17 @@
+:8080 {
+	import ../auth
+	encode zstd gzip
+
+	root * /workspace
+
+ 	route {
+		rewrite /webdav /webdav/
+
+		webdav /webdav/* {
+			prefix /webdav
+		}
+
+		file_server browse
+	}
+
+}
